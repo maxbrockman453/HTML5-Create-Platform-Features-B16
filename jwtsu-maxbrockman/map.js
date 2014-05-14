@@ -12,19 +12,21 @@ function success(position) {
   // Adds new class to the ID status block
   s.className = 'success';
 
+  // creates map wrapper for responsiveness
+  var mapwrapper = document.createElement('div');
+  mapwrapper.className = 'mapwrapper';
 
   // creates the block element at sets the width and height
   var mapcanvas = document.createElement('div');
   // Adds ID to the new div
   mapcanvas.id = 'mapcanvas';
-  mapcanvas.className = 'mapCSS';
-  // sets width and height
-  mapcanvas.style.height = '600px';
-  mapcanvas.style.width = '1000px';
 
+ // Adds the new block element as the last thing within the article block
+  document.querySelector('.map').appendChild(mapwrapper);
 
-  // Adds the new block element as the last thing within the article block
-  document.querySelector('.map').appendChild(mapcanvas);
+ // Adds the new block element as the last thing within the mapwrapper block
+  document.querySelector('.mapwrapper').appendChild(mapcanvas);
+
 
   // creates a new variable 'latlng' off of the google maps object
   var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);

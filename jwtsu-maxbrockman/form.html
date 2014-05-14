@@ -7,7 +7,7 @@
     <meta name="description" content="Demo-ing HTML5 Features">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="form.js"></script>
-    <style type="text/css" src="style.css"></style>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <main>
@@ -23,6 +23,48 @@
         </nav>
       </header>
 
+      <form>
+        <fieldset>
+          <legend>Personal details</legend>
+          <label for="firstname">First name</label>
+          <input id="firstname" name="firstname" type="text" placeholder="Fist name" autofocus required>
+          <label for="lastname">Last name</label>
+          <input id="lastname" name="lastname" type="text" placeholder="Last Name" required>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="youremail@domain.com" required>
+          <label for="phone">Phone number</label>
+          <input id="phone" name="phone" type="tel" pattern="^[0-9]+[\- ]*[0-9]+$" placeholder="555-555-5555" required>
+          <label for="dob">Date of birth</label>
+          <input id="dob" name="dob" type="date" required>
+        </fieldset>
+        <fieldset>
+          <legend>Other business</legend>
+          <label for="favoritenumber">Favorite number</label>
+          <input id="favoritenumber" name="favoritenumber" type="number" min="0" max="10000" placeholder="9013" required>
+          <label for="website">A website</label>
+          <input id="website" name="website" type="url" placeholder="www.website.com" required>
+          <label for="rating">How awesome is this form?</label>
+          <input id="rating" name="rating" type="range" min="1" max="10" value="0">
+          <output name="output" onforminput="value=a.value">0</output>
+        </fieldset>
+        <fieldset>
+          <legend>Billing info</legend>
+          <fieldset required>
+            <legend>Card type</legend>
+            <input id="visa" name="cardtype" type="radio">
+            <label for="visa">Visa</label>
+            <input id="amex" name="cardtype" type="radio">
+            <label for="amex">American Express</label>
+            <input id="mastercard" name="cardtype" type="radio">
+            <label for="mastercard">Mastercard</label>
+          </fieldset>
+          <label for="cardnumber">Card number</label>
+          <input id="cardnumber" name="cardnumber" type="number" required pattern="[0-9]{15||16}">
+        </fieldset>
+        <fieldset>
+          <button type=submit>Place Order</button>
+        </fieldset>
+      </form>
 
     </main>
   </body>
